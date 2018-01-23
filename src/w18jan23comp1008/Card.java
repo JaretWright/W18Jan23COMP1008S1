@@ -23,7 +23,20 @@ public class Card {
     }
 
     public void setFaceName(String faceName) {
-        this.faceName = faceName;
+        String[] validNames = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
+        
+        //loop over the array and make sure the face name exists
+        for (String validName : validNames)
+        {
+            if (validName.equalsIgnoreCase(faceName))
+            {
+                this.faceName = faceName;
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Strings must be 2-10, Jack, Queen, King or Ace");
+        
+        
     }
 
     public String getSuit() {
@@ -45,7 +58,10 @@ public class Card {
     }
 
     public void setFaceValue(int faceValue) {
-        this.faceValue = faceValue;
+        if (faceValue >1 && faceValue <=14)
+            this.faceValue = faceValue;
+        else
+            throw new IllegalArgumentException("Card values must be 2-14 inclusive");
     }
     
     
