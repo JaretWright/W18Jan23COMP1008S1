@@ -21,11 +21,26 @@ public class W18Jan23COMP1008 {
        
        System.out.printf("For snow depth 20, can we ski? %b%n", timeToSki(20));
        System.out.printf("For snow depth 40, can we ski? %b%n", timeToSki(40));
+       
+       printStars(25);
     }
     
     //challenge 4 - time to ski method
     public static boolean timeToSki(int snowDepth)
     {
         return snowDepth>30;
+    }
+    
+    /**
+     * This method will display a super cool pattern to the screen
+     */
+    public static void printStars(int numOfRows)
+    {
+        for (int rowNum=numOfRows; rowNum>0; rowNum--)
+        {
+            for (int col=1; col<=rowNum; col++)
+                System.out.print("*");
+            System.out.println();
+        }
     }
 }
